@@ -1,0 +1,147 @@
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage[russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{adjustbox}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amssymb}
+
+
+\usepackage{geometry}
+\geometry{top=10mm}
+\geometry{bottom=5mm}
+\geometry{left=10mm}
+\geometry{right=10mm}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+
+\newcommand{\display}[1]{\hbox to 0.32\textwidth
+	{\hfil \small #1 \hfil}}
+
+\newcommand{\liner}[4]{\begin{tikzpicture}\draw[ultra thick, #1, #2] (0,0) -- (1.4,0);\node[above left] at (0.3,0) {\scriptsize #3};\node[above right] at (1.1,0) {\scriptsize #4};\end{tikzpicture}}
+\newcommand{\angler}[4]{\begin{tikzpicture}\filldraw[#1] (0,0) -- (0,0.6) arc (90:0:1.7 em);\node[below left] at (0,0) {\scriptsize #2};\node[above] at (0,0.6) {\scriptsize #3};\node[right] at (0.6,0) {\scriptsize #4};\end{tikzpicture}}
+\newcommand{\relgna}[4]{\begin{tikzpicture}\filldraw[#1] (0,0) -- (0,0.6) arc (90:180:1.7 em);\node[below right] at (0,0) {\scriptsize #2};\node[above] at (0,0.6) {\scriptsize #3};\node[left] at (-0.6,0) {\scriptsize #4};\end{tikzpicture}}
+
+\newenvironment{ramka}[1]{\begin{flushleft}\begin{tabular}{|p{#1}|}
+			\hline}{\\\hline\end{tabular}\end{flushleft}\smallskip}
+
+\newcommand{\RomanNumeralCaps}[1]
+{\MakeUppercase{\romannumeral #1}}
+
+\setlength{\parskip}{0pt}
+
+\renewcommand{\a}{\alpha}
+
+\usepackage{fancyhdr}
+\pagestyle{empty}
+
+\begin{document}
+    \begin{minipage}{0.3\textwidth}
+		\begin{tikzpicture}[scale=1.4, line width=2pt]
+			\filldraw[orange] (1.7,8) -- (1.7,8.5) arc (90:0:1.4 em);
+			\filldraw[yellow] (1.7,8) -- (1.7,8.5) arc (90:180:1.4 em);
+			\draw[blue] (1.7,8) -- (1.7,11);
+			\draw[dashed, orange] (0,8) -- (1.7,11);
+			\draw[dashed, black] (0,8) -- (1.7,8);
+			\draw[orange] (3.4,8) -- (1.7,11);
+			\draw[black] (1.7,8) -- (3.4,8);
+			\node[below left] at (0,8) {D};
+			\node[below right] at (3.4,8) {C};
+			\node[below] at (1.7,8) {A};
+			\node[above] at (1.7,11) {B};
+			\draw[white] (0,0) -- (1.7,0);
+		\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.61\textwidth}
+		{\hfil \Large $74$\hspace*{1.6 em} КНИГА \RomanNumeralCaps{1} ПРЕДЛ. \RomanNumeralCaps{48}. ТЕОРЕМА}
+		\vspace*{1.6 em}
+		\begin{wrapfigure}{l}{0.18\textwidth}
+			\includegraphics[width=0.18\textwidth]{E}
+		\end{wrapfigure}
+		\phantom{Я ненавижу Latex}\\
+		\textit{\large сли в треугольнике квадрат одной стороны }
+		\liner{}{orange}{B}{C}
+		\textit{\large равен сумме квадратов двух других сторон}
+		\liner{}{blue}{A}{B}
+		\textit{\large и}
+		\liner{}{black}{A}{C}
+		\textit{\large ,то угол\\}
+		\angler{orange}{A}{B}{C}
+		\raisebox{20pt}{\itshape \large\\ ,заключенный между этими двумя}
+		\textit{\large сторонами прямой.}
+		\bigskip
+		\begin{center}
+			\rule{0pt}{1 em}
+			\Large Проведем
+			\liner{dashed}{black}{A}{D}
+			$\perp$
+			\liner{}{blue}{A}{B}
+			\\ \vspace{3mm}
+			и $=$
+			\liner{}{black}{A}{C}
+			(пр. $\textrm{\RomanNumeralCaps{1}}._{\textrm{\RomanNumeralCaps{2}}},\textrm{\RomanNumeralCaps{1}}._3$)
+			\\ \vspace{3mm}
+			также проведем
+			\liner{dashed}{orange}{B}{D}
+			.\\ \vspace{3mm}
+			Поскольку
+			\liner{dashed}{black}{A}{D}
+			$=$
+			\liner{}{black}{A}{C}
+			(постр.)\\ \vspace{3mm}
+			\liner{dashed}{black}{A}{D}
+			\raisebox{8pt}{\small 2} $=$
+			\liner{}{black}{A}{C}
+			\raisebox{8pt}{\small 2} ;\\ \vspace{3mm}
+			$\therefore$
+			\liner{dashed}{black}{A}{D}
+			\raisebox{8pt}{\small 2} $+$
+			\liner{}{blue}{A}{B}
+			\raisebox{8pt}{\small 2} $=$
+			\liner{}{black}{A}{C}
+			\raisebox{8pt}{\small 2} $+$
+			\liner{}{blue}{A}{B}
+			\raisebox{8pt}{\small 2} ;\\ \vspace{3mm}
+			но
+			\liner{dashed}{black}{A}{D}
+			\raisebox{8pt}{\small 2} $+$
+			\liner{}{blue}{A}{B}
+			\raisebox{8pt}{\small 2} $=$
+			\liner{dashed}{orange}{B}{D}
+			\raisebox{8pt}{\small 2}
+			(пр. $\textrm{\RomanNumeralCaps{1}}._{47}$),\\ \vspace{3mm}
+			и
+			\liner{}{black}{A}{C}
+			\raisebox{8pt}{\small 2} $+$
+			\liner{}{blue}{A}{B}
+			\raisebox{8pt}{\small 2} $=$
+			\liner{}{orange}{B}{C}
+			\raisebox{8pt}{\small 2}
+			(гип.)\\ \vspace{3mm}
+			$\therefore$
+			\liner{dashed}{orange}{B}{D}
+			\raisebox{8pt}{\small 2} $=$
+			\liner{}{orange}{B}{C}
+			\raisebox{8pt}{\small 2},\\ \vspace{3mm}
+			$\therefore$
+			\liner{dashed}{orange}{B}{D} $=$
+			\liner{}{orange}{B}{C};\\ \vspace{3mm}
+			\raisebox{15 pt} { и $\therefore$}
+			\normalsize
+			\relgna{yellow}{A}{B}{D} \raisebox{15 pt}{$=$}
+			\angler{orange}{A}{B}{C} \raisebox{15 pt}{\Large (пр. \RomanNumeralCaps{1}.8),}\\ \vspace{3mm}
+			\raisebox{15 pt}{\Large следовательно}
+			\angler{orange}{A}{B}{C}
+			\raisebox{15 pt}{\Large прямой угол.}\\ \vspace{3mm}
+		\end{center}
+		\Large \mbox{}\hfill ч. т. д.
+	\end{minipage}
+
+
+\end{document}

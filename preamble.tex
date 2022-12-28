@@ -1,0 +1,37 @@
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage[russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{adjustbox}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+
+
+\usepackage{geometry}
+\geometry{top=10mm}
+\geometry{bottom=5mm}
+\geometry{left=15mm}
+\geometry{right=15mm}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+
+\newcommand{\display}[1]{\hbox to 0.32\textwidth
+	{\hfil \small #1 \hfil}}
+
+\newenvironment{ramka}[1]{\begin{flushleft}\begin{tabular}{|p{#1}|}
+		\hline}{\\\hline\end{tabular}\end{flushleft}\smallskip}
+	
+\newcommand{\RomanNumeralCaps}[1]
+	{\MakeUppercase{\romannumeral #1}}
+
+\setlength{\parskip}{0pt}
+
+\renewcommand{\a}{\alpha}
+
+\usepackage{fancyhdr}
+\pagestyle{empty}
